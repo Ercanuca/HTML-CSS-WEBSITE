@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap');
+           *,
+           *::before,
+           *::after <!-- tüm etiketler için reset kodlaro --> 
+           {
+               margin:0;
+               padding: 0;
+               box-sizing: border-box; 
+               border:0;
+               font-family: 'Poppins', sans-serif;
+               
+           }
+           
+           a,
+           a:link,
+           a:visited
+           {
+            text-decoration: none;
+            outline: none;
+            border: none;
+           }
+           ul,
+           li
+           {
+               list-style: none;
+               margin: 0;
+               padding: 0;
+               color:black;
+               
+           }
+            section,
+            span,
+            p
+            {
+                margin: 0;
+                padding: 0;
+                outline: none;
+                border:0;
+                
+            }
+            
+            .container
+            {
+                max-width:1170px;
+                margin: 0  auto;
+                padding: 0 15pc;
+            }
+            .header
+            {
+                background-image: url(menu3.jpg);
+                background-position:center ;
+                background-size: center;
+                background-attachment:fixed;
+                height: 100vh; /*tüm ekran boyunca olmasýný saðlýyor*/
+            }
+            .header-navbar
+            {
+                display: flex;/*yan yana getirmek için kulanýtoruz*/
+                align-items: center;
+                justify-content: space-between;/*header'ý diðerlerinden ayýrýyoruz'*/
+                padding:40px 0;/*yukarýdan 40px yanlardan 0px;*/
+               
+               
+            }
+            .header-logo
+            {
+                font-size: 16px;
+                letter-spacing: 2px;
+                border-bottom: 5px solid #000;
+                border-radius: 35px; /*eðriltmek için*/
+            }
+            
+            ul
+            {
+                display: flex; /*yan yana getirmek için kulanýtoruz*/
+  
+            }
+            li
+            {
+                margin-left: 27px;
+              
+            }
+            
+            a{
+                color: black;
+                font-weight: bold;
+                font-size: 25px;
+            }
+            .header-text
+            {
+                position:absolute; /*top ve left deðerleri verebilmek için*/
+                top:50%;
+                left:50%;
+                transform: translateX(-50%);
+               
+            }
+            
+            h1
+            {
+               font-size: 8.5rem;
+               font-weight: 100;
+               line-height: 0.4;
+               letter-spacing: 2px;
+               font-family: 'Herr Von Muellerhoff', cursive;
+               color: #30d5c8;
+            }
+            .first-letter{
+            font-size: 10.3rem;
+            color: #30d5c8;
+            }
+            
+            /**HAKKIMIZDA*/
+            .hakkýmýzda
+            {
+                margin-bottom: 150px;
+            }
+            
+            .hakkýmýzda-title
+            {
+                margin: 60px 0px; 
+                
+            }
+            .hakkýmýzda-title h2
+            {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                color: #30d5c8;
+                font-size: 30px;
+                font-weight: 600;
+                
+                
+            }
+            
+            .hakkýmýzda-title h2::after
+            {
+                content: "";
+                width: 30px;
+                height:3px;
+                background-color: #30d5c8;
+                margin: 0 auto;
+                display: block;
+                margin-top: 10px;
+                
+            }
+            .hakkýmýzda-content
+            {
+            display: flex;
+            align-items:center; /*dikeyde hizalamak için*/
+            justify-content: space-around; /*yatayda hizalamak için birbirinden ayýrýr*/
+            
+            }
+            .hakkýmýzda-img img
+            {
+                width:80%; /*geniþlik verdik*/
+                
+            }
+            .about-image img
+            {
+             width: 100%;
+             height: 100%;
+             object-fit:cover ;/*resmimizin en boy oranýný koruyoe*/
+             
+            }
+            .hakkýmýzdatext
+            {
+                width:40%;
+            }
+            h4
+            {
+                margin-bottom: 25px;
+                text-align: center;
+                font-size: 40px;
+                color: #30d5c8;
+                font-family:'Herr Von Muellerhoff', cursive;
+                letter-spacing: 0.3rem; /*harfler arasý boþluk*/
+                font-weight: 100;/*yazýyý daha çok inceltmek için*/
+                
+                
+                
+            }
+            .hakkýmýzda-text p
+            {
+                font-size: 15px;
+                text-align: center;
+                color:#383838;
+            }
+            /*KEÞFET*/
+            
+             .keþfet
+            {
+                margin-bottom: 150px;
+            }
+            
+            .keþfet-title
+            {
+                margin: 60px 0px; 
+                
+            }
+            .keþfet-title h2
+            {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                color: #30d5c8;
+                font-size: 30px;
+                font-weight: 600;
+                
+                
+            }
+            
+            .keþfet-title h2::after
+            {
+                content: "";
+                width: 30px;
+                height:3px;
+                background-color: #30d5c8;
+                margin: 0 auto;
+                display: block;
+                margin-top: 10px;
+                
+            }
+            .keþfet-content
+            {
+            display: flex;
+            align-items:center; /*dikeyde hizalamak için*/
+            justify-content: space-around; /*yatayda hizalamak için birbirinden ayýrýr*/
+            
+            }
+            .keþfet-img img
+            {
+                width:80%; /*geniþlik verdik*/
+                
+            }
+            .about-image img
+            {
+             width: 100%;
+             height: 100%;
+             object-fit:cover ;/*resmimizin en boy oranýný koruyoe*/
+             
+            }
+            .keþfettext
+            {
+                width:40%;
+            }
+            h4
+            {
+                margin-bottom: 25px;
+                text-align: center;
+                font-size: 40px;
+                color: #30d5c8;
+                font-family:'Herr Von Muellerhoff', cursive;
+                letter-spacing: 0.3rem; /*harfler arasý boþluk*/
+                font-weight: 100;/*yazýyý daha çok inceltmek için*/
+                
+                
+                
+            }
+            .keþfet-text p
+            {
+                font-size: 15px;
+                text-align: center;
+                color:#383838;
+            }
+            
+            /*PORTFOLÝO*/
+            .portfolio
+            {
+                display: flex;
+                flex-wrap: wrap;/*taþanlarý aþaðý*/
+                
+            }
+            .portfolio-item
+            {
+                width: 25%;
+                height: 300px;
+                overflow: hidden; /* taþmalarý engeller*/
+                position: relative;
+                
+                
+            }
+            .portfolio-item img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;/* en boy oranýný korumasý için*/
+                transition:.5s; /*gecikme*/
+                
+            }
+            .overlay
+            {
+                width: 100%;
+                height: 100%;
+                background-color: #5b2a02;
+                position: absolute; /* top left ile hizalýyoruz*/
+                top: 100%;
+                left: 0;
+                opacity: 0.8;
+                color: #fff;
+                font-size: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition:.5s; /*gecikme*/
+                
+                
+            }
+            
+            .portfolio-item:hover .overlay
+            {
+                top: 0%;
+            }
+            portfolio-item:hover img
+            {
+                transform: scale(2.1);
+            }
+            
+            /* CONTACT*/
+            
+            .contact
+            {
+                display:flex;
+                padding: 10px;
+                color:black;
+                
+            }
+            .contact h2{
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                color: #30d5c8;
+                font-size: 30px;
+                font-weight: 600;
+            }
+            .contact h2::after{
+                content: "";
+                width: 30px;
+                height:3px;
+                background-color: #30d5c8;
+                margin: 0 auto;
+                display: block;
+                margin-top: 10px;
+            }
+            contact-item
+            {
+                
+                display: flex;/*yan yana getirmek için kulanýtoruz*/
+                align-items: center;
+                
+                padding:40px 0;
+            }
+            </style>
+    <title>TODO supply a title</title>
+    <meta charset="windows-1254">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+ <body><a name="anasayfa"></a>
+
+    <header id="header">
+        <div class="header">
+            <div class="container"><!-- ortalamak için -->
+                <div class="header-navbar">
+                    <div class="header-logo">  
+                     
+                        <h2> BOOKS</h2><!-- logomuz -->
+                    
+                    </div>
+                    <div class="header-menu">
+                        <ul>
+                            <li><a href="#"/>Anasayfa</li>
+                            
+                                <li><a href="#hakkýmýzda" /> Hakýnda</li>
+                          
+                            <li><a href="#keþfet"/>Keþfet</li>
+                          
+                            <li><a href="#contact"/>Ýletiþim</li>  
+                            
+                        </ul>  
+                    </div>
+                </div>
+                <div class="header-text">
+                    <h1><span class="ilk_harf">W</span>elcome</h1>
+                    
+                    
+            </div>
+        </div>
+    </header>
+   <!-- Hakýmýzda kýsmý-->
+<section id="hakkýmýzda">  
+    <div class="hakkýmýzda">
+        <div class="container">
+            <div class="hakkýmýzda-title">
+                <h2>HAKIMIZDA</h2>
+            </div>
+            <div class="hakkýmýzda-content">
+                <div class="hakkýmýzda-img" >
+                    <img src="hakýmýzda.jpg" alt="" hight="50" weight="50"/>
+                </div>
+                <div class="hakkýmýzda-text">
+                    <h4>Bizim Hikayemiz</h4>
+                    <p>Ýnsanlarýn zihnen özgürleþmesinin ve kiþisel geliþimlerinin en büyük destekçisi <br> olarak en çok sevilen ve tercih edilen deneyim markasý olmak.</p>
+                </div>
+        </div>
+    </div>  
+</section>
+<!-- hakkýmýzda son -->
+
+<!-- portfilio -->
+<seletion>
+    <div class="portfolio">
+        <div class="portfolio-item">
+            <img src="s1.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s2.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s3.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s4.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s5.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s6.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div><!-- comment -->
+        <div class="portfolio-item">
+            <img src="s7.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="s8.jpg" alt=""/>
+            <div class="overlay">
+                <i class="fas fa-book"></i>
+            </div>
+        </div>
+    </div>
+</seletion>
+<!--KEÞFET-->
+<section id="keþfet">
+    <div class="keþfet">
+        <div class="container">
+            <div class="keþfet-title">
+                <h2>KEÞFET</h2>
+            </div>
+            <div class="keþfet-content">
+                <div class="keþfet-img" >
+                    <img src="resim.jpg" alt="" hight="50" weight="50"/>
+                </div>
+                <div class="keþfet-text">
+                    <h4>Bizim Hikayemiz</h4>
+                    <p>Ýnsanlarýn zihnen özgürleþmesinin ve kiþisel geliþimlerinin en büyük destekçisi <br> olarak en çok sevilen ve tercih edilen deneyim markasý olmak.</p><br>
+                    <p><a href="https://www.dr.com.tr/?gclid=CjwKCAiAtouOBhA6EiwA2nLKHxNYF9_H8S0AU7OrpT0vdeifdtU1exEuN5dnOzGLNsU-ruReSc4n5hoCCYwQAvD_BwE&gclsrc=aw.ds" STYLE="COLOR:#ffde0a;">D&R Kitap</a></p><br>
+                    <p><a href="https://www.kitapsec.com/?gclid=CjwKCAiAtouOBhA6EiwA2nLKHxiezDGnA-V7jNLE9si6lUgkdl48Yjb63M7_T2elIi-3kWko_ysB8hoCnS4QAvD_BwE" STYLE="COLOR:#f70aff;"> Kitap Seç</a></p><br>
+                    <p> <a href="https://www.bkmkitap.com/?gclid=CjwKCAiAtouOBhA6EiwA2nLKH-EnDHXPxV2kxPPYsBwIlQn-VXst9HM6wEXLAQoRv1lCq-XZU13yOxoCSsMQAvD_BwE" STYLE="COLOR:#1f40ff;">BKM Kitap</a></p><br>
+                    <p><a href="https://www.kitapyurdu.com/" STYLE="COLOR:#47ff8b;">Kitap Yurdu</a></p>            
+                </div>
+        </div>
+    </div>  
+</section>
+<section id="contact" bgcolor:blue>
+    <div class="contact">
+        <div class="container">
+            <div class="page-tittle">
+                <h2>ÝLETÝÞÝM</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-item" >
+                    <p><a href="tel:+905454121788">0545 412 1788</a></p><br><!-- comment -->
+                    <p><a href="tel:+902122541217">212 254 12 17</a><p>
+                </div>
+                <div class="contact-item" >
+                    <a href="https://www.google.com/maps/place/F%C4%B1rat+%C3%9Cniversitesi/@38.6793756,39.1953054,16z/data=!4m9!1m2!2m1!1zZsSxcmF0IMO8bml2ZXJzaXRlc2k!3m5!1s0x4076c043f0ec934d:0x97da54a9bdfebc9a!8m2!3d38.6777569!4d39.2019556!15sChRmxLFyYXQgw7xuaXZlcnNpdGVzaZIBCnVuaXZlcnNpdHk">Üniversite, 23200 Elâzýð Merkez/Elazýð</a><br><!-- comment -->
+                    
+                </div><!-- comment -->
+                <div class="contact-item" >
+                    <p>  <a href="mailto:contact@firat.edu.tr">contact@firat.edu.tr</a>
+                    </p><br><!-- comment -->
+                    
+                </div>
+                
+        </div>
+    </div>  
+
+</section>
+<p align="right"><a href="#anasayfa" style="padding:10px;"  ><img src="https://img.icons8.com/flat-round/64/000000/collapse-arrow--v1.png"/></a></p>
+</body>
+</html>
